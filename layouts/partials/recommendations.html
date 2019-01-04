@@ -4,9 +4,16 @@
                 <div class="recommendationsset">
                     <ul>
                     {{ range .Pages }}
+                    {{ if isset .Params "title" }}
                     <li>
-                        <h3><a href="{{ .Permalink }}">{{ .Title }}&nbsp;(<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>)</a></h3>
+                        <!--<a href="{{ .Permalink }}">{{ .Title }}&nbsp;(<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>)</a>-->
+                        {{ .Title }}&nbsp;(<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>)
+                        <br>
+                        <i>{{ .Description }}</i>
+                        <br>
                     </li>
+                    <br>
+                    {{ end }}
                     {{ end }}
                     </ul>
                 </div>
