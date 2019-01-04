@@ -1,0 +1,13 @@
+            
+            <section class="recommendations-section section">
+                <h2 class="section-title"><i class="fa {{ .Site.Params.recommendations.icon }}"></i>{{ i18n "recommendations" }}&nbsp;(<a href="/admin/#/collections/recommendations">Afegir</a>)</h2>
+                <div class="recommendationsset">
+                    <ul>
+                    {{ range .Pages }}
+                    <li>
+                        <h3><a href="{{ .Permalink }}">{{ .Title }}&nbsp;(<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>)</a></h3>
+                    </li>
+                    {{ end }}
+                    </ul>
+                </div>
+            </section><!--//recommendations-section-->

@@ -10,5 +10,7 @@
   translation: Projects
 - id: skills
   translation: Skills & Proficiency
+- id: recommendations
+  translation: Recommendations  
 - id: summary
   translation: Career Profile

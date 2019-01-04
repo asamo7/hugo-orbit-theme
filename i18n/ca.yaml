@@ -10,5 +10,7 @@
   translation: Projectes
 - id: skills
   translation: Coneixements
+- id: recommendations
+  translation: Recomanacions  
 - id: summary
   translation: Perfil
