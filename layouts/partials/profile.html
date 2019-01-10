@@ -1,5 +1,12 @@
-            <div class="profile-container">
-                <img class="profile img-circle" src="{{ .Site.BaseURL }}assets/images/{{ .Site.Params.profile.avatar }}" alt="" />
-                <h1 class="name">{{ .Site.Params.profile.name }}</h1>
-                <h3 class="tagline">{{ .Site.Params.profile.tagline }}</h3>
-            </div><!--//profile-container-->
+{{ $avatar := $.Site.Params.profile.avatar }}
+{{ $page := . }}
+{{ with $.Site.GetPage "page" "uploads/index.md" }}
+    {{ with .Resources.GetMatch $avatar }}
+        {{$resized := .Fill "186x190 Center"}}
+        <div class="profile-container">
+            <img class="profile img-circle" src="{{ $resized.RelPermalink }}" alt="" />
+            <h1 class="name">{{ $.Site.Params.profile.name }}</h1>
+            <h3 class="tagline">{{ $.Site.Params.profile.tagline }}</h3>
+        </div><!--//profile-container-->
+    {{ end }}
+{{ end }}
